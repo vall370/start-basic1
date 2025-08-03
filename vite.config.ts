@@ -14,4 +14,11 @@ export default defineConfig({
     tanstackStart({ customViteReactPlugin: true }),
     viteReact(),
   ],
+  define: {
+    global: 'globalThis',
+    'global.File': 'undefined',
+  },
+  optimizeDeps: {
+    exclude: ['undici'],
+  },
 })
